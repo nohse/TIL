@@ -21,7 +21,7 @@ int recursive_multiple(int a, int b) {
 }
 
 int recursive_remain(int a, int b) {
-	if (a< b)
+	if (a-b< 0)
 		return a;
 	else {
 		return  recursive_remain(a-b, b);
