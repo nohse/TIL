@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct node {
+typedef struct node {//노드 구조체
 	struct node* nextelement;
 	struct node* nextgroup;
 
@@ -10,16 +10,17 @@ typedef struct _Item {
 	node* header;
 	char name;
 } Item;
-node* getnode() {
+node* getnode() {//노드 동적 할당
 	node* n = (node*)malloc(sizeof(node));
 	n->nextelement = NULL;
 	n->nextgroup = NULL;
 	return n;
 }
-void putnode(node* p) {
-	free(p);
+void putnode(node* p) {//노드 메모리 해제
+	if(p!=NULL)
+		free(p);
 }
-void initshare(Item E[], Item G[], int NE, int NG, char* nameE, char* nameG) {
+void initshare(Item E[], Item G[], int NE, int NG, char* nameE, char* nameG) {//초기화
 
 
 	for (int i = 0; i < NE; i++) {
@@ -35,11 +36,11 @@ void initshare(Item E[], Item G[], int NE, int NG, char* nameE, char* nameG) {
 		G[i].name = nameG[i];
 	}
 }
-int getindex(Item a[], int N, char name);
-void addshare(Item E[], Item G[], char e, char g);
-void traverseshareelements(Item E[], Item G[], char g);
-void traversesharegroup(Item E[], Item G[], char e);
-char getename(Item* E, int NE, node* p) {
+int getindex(Item a[], int N, char name);//인덱스 구하기
+void addshare(Item E[], Item G[], char e, char g);//쿠폰 정보 입력
+void traverseshareelements(Item E[], Item G[], char g);//elements 정보 순회
+void traversesharegroup(Item E[], Item G[], char e);//group 정보 순회
+char getename(Item* E, int NE, node* p) {//elements 구하기
 	node* q = p->nextgroup;
 	while (q->nextelement != NULL) {
 		q = q->nextgroup;
@@ -52,7 +53,7 @@ char getename(Item* E, int NE, node* p) {
 
 	return 0;
 }
-void removenode(node* target) {
+void removenode(node* target) {//target 노드 삭제하기
 	node* p;
 
 	node* nextE = target->nextelement;
@@ -70,7 +71,7 @@ void removenode(node* target) {
 	putnode(target);
 	printf("OK\n");
 }
-void removeshare(Item E[], Item G[], char e, char g) {
+void removeshare(Item E[], Item G[], char e, char g) {//쿠폰 삭제하기
 	int numg = getindex(G, 5, g);
 	int nume = getindex(E, 4, e);
 	node* HG = G[numg].header;
@@ -97,15 +98,9 @@ void removeshare(Item E[], Item G[], char e, char g) {
 			break;
 		}
 	}
-	//for (int i = 0; i < nume ; i++) {
-	//	p = p->nextelement;
-	//}
-	//for (int i = 0; i < nume; i++) {
-	//	p = p->nextgroup;
-	//}
 
 }
-char getgname(Item* G, int NG, node* p) {
+char getgname(Item* G, int NG, node* p) {//group 구하기
 	node* q = p->nextelement;
 	while (q->nextgroup != NULL)
 		q = q->nextelement;
@@ -117,12 +112,12 @@ char getgname(Item* G, int NG, node* p) {
 
 	return 0;
 }
-int main() {
+int main() {//main 함수
 	Item E[5], G[4];
 	int NE = 4, NG = 5;
 	char nameE[] = { '1','2','3','4' };
 	char nameG[] = { 'A','B','C','D','E'};
-	initshare(E, G, NE,NG,nameE,nameG);
+	initshare(E, G, NE,NG,nameE,nameG);//초기화
 	char cmd, g, e;
 	while (1) {
 		scanf("%c", &cmd);
@@ -150,22 +145,8 @@ int main() {
 		else if (cmd == 'q')
 			exit(0);
 	}
-	for (int i = 0; i < NE; i++) {
-		node* p = E[i].header;
-		while (p != NULL) {
-			node* q = p;
-			p = p->nextgroup;
-			free(q);
-		}
-	}
-	for (int i = 0; i < NG; i++) {
-		node* p = G[i].header;
-		while (p != NULL) {
-			node* q = p;
-			p = p->nextelement;
-			free(q);
-		}
-	}
+	putnode(&E);//메모리 해제
+	putnode(&G);
 	return 0;
 
 }
