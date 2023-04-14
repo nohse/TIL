@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>기본 구조를 가진 표 만들기</title>
+        <style>
+            table{
+                border-collapse:collapse;
+                text-align:left;
+            }
+            td,th{
+                padding:5px;
+                height:15px;
+                width: 100px;
+            }
+            thead,tfoot{
+                background-color: darkgray;
+                color: yellow;
+            }
+            tbody tr:nth-child(even){
+                background-color: aliceblue;
+            }
+            tbody tr:hover{
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>1학기 성적</h3>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>황기태</td>
+                    <td>80</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td>이재문</td>
+                    <td>95</td>
+                    <td>99</td>
+                </tr>
+                <tr>
+                    <td>이병은</td>
+                    <td>95</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>김남윤</td>
+                    <td>50</td>
+                    <td>40</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>합</th>
+                    <th>310</th>
+                    <th>249</th>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
