@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            table{
+                border-collapse:collapse;
+            }
+            thead, tfoot{
+                background-color: darkgray;
+                color: yellow;
+                
+            }
+            tbody tr:nth-child(even){
+                background: aliceblue;
+            }
+            tbody tr:hover{
+                background-color: red;
+            }
+            th,td{
+                text-align:left;
+                padding: 10px;
+                height: 20px;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>황기태</td>
+                <td>80</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>이재문</td>
+                <td>95</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>이병은</td>
+                <td>85</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>김남윤</td>
+                <td>50</td>
+                <td>45</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>합</th>
+                <th>175</th>
+                <th>169</th>
+            </tr>
+        </tfoot>
+    </table>
+</html>
