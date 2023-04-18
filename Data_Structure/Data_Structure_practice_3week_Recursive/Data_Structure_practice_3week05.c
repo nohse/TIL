@@ -14,9 +14,12 @@ void recursive_Hanoi(int N, char a, char b, char c) {
 		printf("%c %c\n", a, c);
 		return 0;
 	}
-	recursive_Hanoi(N - 1, a, c, b);
-	printf("%c %c\n", a, c);
-	recursive_Hanoi(N - 1, b, a, c);
+	//recursive_Hanoi(N - 1, a, c, b);
+	//printf("%c %c\n", a, c);
+	//recursive_Hanoi(N - 1, b, a, c);
+	printf("%c %c\n", a, b);
+	recursive_Hanoi(N - 1, a, b, c);
+	printf("%c %c\n", b, c);
 	return 0;
 
 }
