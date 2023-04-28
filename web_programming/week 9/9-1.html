@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            div{
+                display: inline-block;
+                padding:5px;
+                color: white;
+                background-color: olivedrab;
+            }
+
+            div#rotate{transform:rotate(20deg);}
+            div#skew{transform: skew(0deg,-20deg);}
+            div#translate{transform: translateY(100px);}
+            div#scale{transform: scale(3,1);}
+
+            div#rotate:hover{transform:rotate(80deg);}
+            div#skew:hover{transform: skew(0deg,-60deg);}
+            div#translate:hover{transform: translateY(50px);}
+            div#scale:hover{transform: scale(4,2);}
+
+            div#scale:active{transform:scale(1,5)}
+        </style>
+    </head>
+    <body>
+        <h3>다양한 Transform</h3>
+        아래는 회전(rotate), 기울임(skew), 이동(translate),
+        확대/축소(scale)가 적용된 사례이다
+        <hr>
+        <div id="rotate">retate 20 deg</div>
+        <div id="skew">skew(0,-20deg)</div>
+        <div id="translate">translateY(100px)</div>
+        <div id="scale">scale(3,1)</div>
+    </body>
+</html>
