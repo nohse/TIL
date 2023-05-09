@@ -6,8 +6,12 @@ void push(char S[], char e) {
 	S[t] = e;
 }
 char pop(char S[]) {
+	char tmp;
+	tmp = S[t];
 	t = t - 1;
-	return S[t + 1];
+	S[t+1] = 0;
+
+	return tmp;
 }
 int isOperand(char a) {
 	if (a >= 'A' && a <= 'Z')
@@ -29,9 +33,9 @@ int numa(char a[], int i) {
 		s = 3;
 	}
 	else if (a[i] == '+' || a[i] == '-') {
-		if (isOperand(a[i - 1]) == 1)
+		if (isOperand(a[i - 1]) == 1||a[i-1]==')')
 			s = 4;
-		else
+		else 
 			s = 6;
 	}
 	else if (a[i] == '*' || a[i] == '/') {
