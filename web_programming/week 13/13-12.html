@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function drawImage(){
+                let sel=document.getElementById("fruits");
+                let img=document.getElementById("fruitimg");
+                img.src=sel.options[sel.selectedIndex].value;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>select 객체에서 선택한 과일 출력</h3>
+        <hr>
+        과일을 선택하면 이미지가 출력됩니다
+        <form>
+            <select id="fruits" onchange="drawImage()">
+                <option value="movie1.png"selected>영화1</option>
+                <option value="movie2.png">영화2</option>
+                <option value="movie3.png">영화3</option>
+            </select>
+            <img id="fruitimg" src="movie1.png">
+        </form>
+    </body>
+</html>
