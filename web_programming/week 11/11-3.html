@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Array 객체로 배열 만들기</title>
+    </head>
+    <body>
+        <h3>Array 객체로 배열 만들기</h3>
+        <hr>
+        <script>
+            let degrees=new Array();
+            degrees[0]=15.1;
+            degrees[1]=16.2;
+            degrees[2]=17.3;
+            degrees[3]=19.4;
+            degrees[4]=15.4;
+            let sum=0;
+            for(let i=0;i<degrees.length;i++){
+                sum+=degrees[i];
+            }
+            document.write("평군 온도는 : "+sum/degrees.length);
+        </script>
+    </body>
+</html>
