@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Document</title>
+        <script>
+            function timer(){
+                let now=new Date();
+                let inform=now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+                document.getElementById("clock").innerHTML=inform;
+                setTimeout('timer()',1000);
+            }
+        </script>
+    </head>
+    <body>
+        <h3 id="clock"></h3>
+        <script>timer();</script>
+    </body>
+</html>

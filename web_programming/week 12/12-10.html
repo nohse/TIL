@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        function calc(a){
+            let x=document.calculator.number1.value;
+            if(a==1){
+                document.calculator.total.value=Math.sin((x*Math.PI)/180.0);
+            }
+            else if(a==2){
+                document.calculator.total.value=Math.log(x);
+            }
+            else if(a==3){
+                document.calculator.total.value=Math.sqrt(x);
+            }
+            else if(a==4){
+                document.calculator.total.value=Math.abs(x);
+            }   
+        }
+    </script>
+</head>
+<html>
+    <body>
+        <form name="calculator">
+            입력:               <input type="text" name="number1"><br />
+            계산 결과:          <input type="text" name="total"><br />
+
+            <input type="button" value="SIN" onclick="calc(1);">
+            <input type="button" value="LOG" onclick="calc(2);">
+            <input type="button" value="SQRT" onclick="calc(3);">
+            <input type="button" value="ABS" onclick="calc(4);">
+        </form>
+
+    </body>
+</html>
