@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<htm>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function change(){
+                let span=document.getElementById("id1");
+                span.style.color="green";
+                span.style.fontSize="30px";
+                span.style.display="block";
+                span.style.border="3px dotted magenta";
+                span.style.margin="20px";
+                span.style.width="6em"
+            }
+        </script>
+    </head>
+    <body>
+        <h3>CSS 스타일 동적 변경</h3>
+        <hr>
+        <p id="p1" style="color: blue;">이것은 <span id="id1" style="color: red;">문장입니다.</span></p>
+        <button type="button" onclick="change()">스타일 변경</button>
+    </body>
+</htm>
