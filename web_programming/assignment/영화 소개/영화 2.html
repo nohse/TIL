@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>영화 선택</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>영화 선택</h1>
+
+    <form id="movieForm">
+      <div class="form-group">
+        <label for="movieTitle">영화 제목:</label>
+        <input type="text" id="movieTitle" name="movieTitle" placeholder="영화 제목을 입력하세요">
+      </div>
+
+      <div class="form-group">
+        <label for="movieGenre">장르:</label>
+        <input type="text" id="movieGenre" name="movieGenre" placeholder="영화 장르를 입력하세요">
+      </div>
+
+      <div class="form-group">
+        <label for="moviePlot">줄거리:</label>
+        <textarea id="moviePlot" name="moviePlot" rows="4" placeholder="영화 줄거리를 입력하세요"></textarea>
+      </div>
+
+      <button type="submit">영화 선택하기</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+</body>
+</html>

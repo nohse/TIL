@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>영화 소개</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .movie-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .movie-info img {
+      width: 120px;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    .movie-info p {
+      line-height: 1.5;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>영화 소개</h1>
+
+    <div class="form-group">
+      <label>장르:</label>
+      <input type="radio" name="genre" value="action" checked> 액션
+      <input type="radio" name="genre" value="drama"> 드라마
+      <input type="radio" name="genre" value="comedy"> 코미디
+    </div>
+
+    <div class="form-group">
+      <label>평점:</label>
+      <input type="checkbox" name="rating" value="5"> 5점
+      <input type="checkbox" name="rating" value="4"> 4점
+      <input type="checkbox" name="rating" value="3"> 3점
+    </div>
+
+    <div class="movie-info">
+      <img src="movie1.png" alt="영화 포스터">
+      <p>
+        영화 제목: 덕구<br>
+        감독: 홍상수<br>
+        출연: 김민희, 곽도원, 윤제문<br>
+        개봉일: 2018년 7월 4일<br>
+        줄거리: 한 여성과 소년의 독특한 우정을 그린 감성 드라마.
+      </p>
+    </div>
+
+    <h2>OST 목록</h2>
+    <ul>
+      <li>1. Main Theme</li>
+      <li>2. Love Ballad</li>
+      <li>3. Sad Piano</li>
+    </ul>
+
+    <h2>영화 예고편</h2>
+  </div>
+</body>
+</html>
