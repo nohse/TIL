@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1 id="time"></h1><br>
+        <h1 id="am"></h1>
+        <script>
+            let time=new Date().getHours();
+            document.getElementById("time").innerHTML="time = "+time;
+            if(time<12){
+                document.getElementById("am").innerHTML="GoodMorning";
+            }
+            else{
+                document.getElementById("am").innerHTML="GoodAfternoon";
+            }
+        </script>
+    </body>
+</html>

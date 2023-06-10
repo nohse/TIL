@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            let timer=null;
+            function over(){
+                timer=setTimeout("load('http://www.naver.com')",5000);
+                document.getElementById("img").title="타이머 작동 시작...."
+            }
+            function out(){
+                if(timer!=null){
+                    clearTimeout(timer);
+                }
+            }
+            function load(url){
+                window.location=url;
+            }
+        </script>
+    </head>
+    <body>
+        <img id="img" src="movie1.png" onmouseover="over()" onmouseout="out()" alt="이미지입니다">
+    </body>
+</html>

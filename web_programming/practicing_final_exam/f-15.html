@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function checkfilled(){
+                let name=document.getElementById("name");
+                if(name.value==""){
+                    name.focus();
+                }
+            }
+        </script>
+    </head>
+    <body onload="document.getElementById('name').focus();">
+        <h3>onfocus and onblur</h3>
+        <hr>
+        <p>이름을 입력하지 않고 다른 창으로 이동할 수 없습니다.</p>
+        <form>
+            이름<input type="text" id="name" onblur="checkfilled()"><br>
+            학번<input type="number"id="number">
+        </form>
+    </body>
+</html>

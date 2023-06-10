@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h3>while 문으로 0에서 n까지 합</h3>
+        <hr>
+        <p id="text"></p>
+        <script>
+            let a=prompt("몇까지 더할까요?");
+            a=parseInt(a);
+            let sum=0;
+            for(let i=1;i<=a;i++){
+                sum+=i;
+            }
+            document.getElementById("text").innerHTML="0에서 "+a+"까지의 합은"+sum+"입니다.";
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h3>Math를 활용한 구구단 연습</h3>
+        <hr>
+        <script>
+            let a=Math.random()*9+1;
+            let b=Math.random()*9+1;
+            a=Math.floor(a);
+            b=Math.floor(b);
+            result=a*b;
+            let answer=prompt(a+"x"+b+"값은 얼마입니까?");
+            answer=parseInt(answer);
+            if(answer==a*b){
+                document.write("정답!");
+            }
+            else{
+                document.write("아니오!!");
+            }
+            document.write(a+"*"+b+"="+a*b+"입니다");
+        </script>
+    </body>
+</html>
