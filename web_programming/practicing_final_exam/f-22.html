@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function check(){
+                let a=document.getElementById("id");
+                if(a.value==""){
+                    a.focus();
+                }
+            }
+        </script>
+    </head>
+    <body onload="document.getElementById('id').focus()">
+        이름을 입력하지 않고 다른 창으로 이동할 수 없습니다
+        <form>
+            이름 <input type="text" id="id" onblur="check()"><br>
+            학번 <input type="number">
+        </form>
+    </body>
+</html>
