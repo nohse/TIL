@@ -1,9 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>벽돌 깨기 게임</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
     function startGame(){
     const brickRowCount = 3;
-    const brickColumnCount = 4;
+    const brickColumnCount = 3;
     const brickWidth = 70;
     const brickHeight = 20;
     const brickPadding = 10;
@@ -155,3 +161,37 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 setTimeout(startGame,3000);
   });
+  </script>
+  <style>
+    #gameCanvas {
+      width: 800px;
+      height: 600px;
+      background-color: black;
+    }
+    .brick {
+      width: 70px;
+      height: 20px;
+      background-color: blue;
+      border-radius: 5px;
+      margin: 5px;
+    }
+    #paddle {
+      width: 100px;
+      height: 10px;
+      background-color: red;
+      position: absolute;
+      bottom: 10px;
+      left: 350px;
+    }
+    #ball {
+      width: 20px;
+      height: 20px;
+      background-color: yellow;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+</body>
+</html>
