@@ -56,22 +56,21 @@
     }
     
     function drawBricks() {
-      for (let c = 0; c < brickColumnCount; c++) {
-        for (let r = 0; r < brickRowCount; r++) {
-          if (bricks[c][r].status === 1) {
-            const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
-            const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-            bricks[c][r].x = brickX;
-            bricks[c][r].y = brickY;
-            ctx.beginPath();
-            ctx.rect(brickX, brickY, brickWidth, brickHeight);
-            ctx.fillStyle = "#0095DD";
-            ctx.fill();
-            ctx.closePath();
-          }
-        }
+  for (let c = 0; c < brickColumnCount; c++) {
+    for (let r = 0; r < brickRowCount; r++) {
+      if (bricks[c][r].status === 1) {
+        const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+        const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+        bricks[c][r].x = brickX;
+        bricks[c][r].y = brickY;
+        // 이미지로 대체
+        const brickImage = new Image();
+        brickImage.src = 'brick.jpg'; // 이미지 파일 경로 설정
+        ctx.drawImage(brickImage, brickX, brickY, brickWidth, brickHeight);
       }
     }
+  }
+}
     
     function collisionDetection() {
       for (let c = 0; c < brickColumnCount; c++) {
@@ -167,13 +166,6 @@ setTimeout(startGame,3000);
       width: 800px;
       height: 600px;
       background-color: black;
-    }
-    .brick {
-      width: 70px;
-      height: 20px;
-      background-color: blue;
-      border-radius: 5px;
-      margin: 5px;
     }
     #paddle {
       width: 100px;
